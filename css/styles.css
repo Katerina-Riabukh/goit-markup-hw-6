@@ -510,6 +510,10 @@ body {
     color: var(--accent-color);
 }
 
+.soc-media-foot {
+    margin-right: 80px;
+}
+
 .soc-media-title {
     font-weight: 500;
     font-size: 16px;
@@ -689,6 +693,67 @@ body {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
         0px 1px 1px 0px rgba(46, 47, 66, 0.16),
         0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.subscribe-title {
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.02em;
+    color: var(--white-text-color);
+
+}
+
+.subscribe-form {
+    display: flex;
+}
+
+.subscribe-field {
+    display: block;
+    width: 264px;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-weight: 24px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.subscribe-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    margin-left: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--accent-color);
+    cursor: pointer;
+
+    background-color: var(--accent-color);
+    color: var(--white-text-color);
+
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+    background-color: var(--button-click-color);
+    border-color: var(--button-click-color);
+}
+
+.button-svg {
+    margin-left: 16px;
+    fill: var(--white-text-color);
 }
 
 .backdrop {
