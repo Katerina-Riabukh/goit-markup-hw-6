@@ -718,12 +718,23 @@ body {
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    font-weight: 24px;
+    font-size: 12px;
+    line-height: calc(24 / 12);
     background-color: transparent;
+    outline: transparent;
     color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
 }
+
+.subscribe-field:focus {
+    border-color: var(--accent-color);
+}
+
+.subscribe-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 
 .subscribe-btn {
     display: flex;
@@ -776,6 +787,9 @@ body {
 
     width: 408px;
     height: 576px;
+    padding-top: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
     background-color: var(--bgc-white);
 
 }
@@ -810,4 +824,94 @@ body {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+}
+
+.text-action {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    color: rgba(46, 47, 66, 1);
+}
+
+.input-place {
+    position: relative;
+}
+
+.text-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+
+    color: rgba(142, 143, 153, 1);
+}
+
+.field {
+    width: 360px;
+    height: 40px;
+    margin-bottom: 8px;
+    padding-left: 38px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 16px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+}
+
+.modal-icon {
+    position: absolute;
+    top: 11px;
+    left: 16px;
+}
+
+.comment-field {
+
+    width: 360px;
+    height: 120px;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-left: 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.comment-field::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.checkbox-lable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.checkbox-input {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1.25px solid rgba(46, 47, 66, 1);
+}
+
+.checkbox-text {
+    font-style: 400px;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    color: rgba(117, 117, 117, 1);
+}
+
+.form-send-button {
+    display: block;
+    margin-top: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: var(--white-text-color);
 }
