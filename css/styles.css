@@ -725,6 +725,7 @@ body {
     color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
+    transition: border-color var(--transition);
 }
 
 .subscribe-field:focus {
@@ -753,6 +754,8 @@ body {
 
     background-color: var(--accent-color);
     color: var(--white-text-color);
+
+    transition: border-color var(--transition), background-color var(--transition);
 
 }
 
