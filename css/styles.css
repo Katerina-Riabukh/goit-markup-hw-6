@@ -786,11 +786,13 @@ body {
     transform: translate(-50%, -50%);
 
     width: 408px;
-    height: 576px;
+    height: 584px;
     padding-top: 72px;
     padding-left: 24px;
     padding-right: 24px;
-    background-color: var(--bgc-white);
+    padding-bottom: 24px;
+    border-radius: 4px;
+    background-color: #FCFCFC;
 
 }
 
@@ -810,7 +812,7 @@ body {
     background-color: var(--p-txt-secondary);
     border: 1px rgba(0, 0, 0, 0.1) solid;
     cursor: pointer;
-    transition: fill, border-color, background-color var(--transition);
+    transition: fill, border-color, background-color, box-shadow var(--transition);
 }
 
 .modal-close:hover,
@@ -818,6 +820,7 @@ body {
     fill: var(--white-text-color);
     border-color: var(--button-click-color);
     background-color: var(--button-click-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .backdrop.is-hidden {
@@ -830,7 +833,9 @@ body {
     display: block;
     margin-bottom: 14px;
     font-size: 16px;
+    text-align: center;
     line-height: calc(24 / 16);
+    letter-spacing: 0.02em;
     color: rgba(46, 47, 66, 1);
 }
 
@@ -848,35 +853,56 @@ body {
 }
 
 .field {
-    width: 360px;
+    width: 100%;
     height: 40px;
     margin-bottom: 8px;
     padding-left: 38px;
     padding-top: 11px;
     padding-bottom: 11px;
     padding-right: 16px;
+    outline: transparent;
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
 
+    transition: border-color var(--transition);
+}
+
+.field:focus {
+    border-color: var(--accent-color);
 }
 
 .modal-icon {
     position: absolute;
-    top: 11px;
+    top: 8px;
     left: 16px;
+    
+    pointer-events: none;
+    transition: fill var(--transition);
+}
+.field:focus +.modal-icon {
+    fill: var(--accent-color);
 }
 
 .comment-field {
 
-    width: 360px;
-    height: 120px;
+    width: 100%;
+    height: 100px;
     font-size: 16px;
     padding-top: 8px;
     padding-left: 16px;
+    margin-bottom: 16px;
+    outline: transparent;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
+    transition: border-color var(--transition);
 }
+.comment-field:focus{
+    border-color: var(--accent-color);
+
+}
+
 
 .comment-field::placeholder {
     color: rgba(117, 117, 117, 0.5);
@@ -884,34 +910,103 @@ body {
 
 .checkbox-lable {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-content: center;
     gap: 4px;
 }
 
 .checkbox-input {
+    appearance: none;
     width: 16px;
     height: 16px;
+    border: 1.25px solid var(--primary-text-color);
     border-radius: 2px;
-    border: 1.25px solid rgba(46, 47, 66, 1);
+    transition: background-color var(--transition);
+    transition: border-color var(--transition);
+    transition: box-shadow var(--transition);
+
+    /* background-image: url(/icons/checkbox.\svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 8px;
+    transition: background-color var(--transition);
+    transition: border-color var(--transition); */
 }
+.checkbox-place{
+    position: relative;
+}
+.checkbox-icon{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    opacity: 0;
+}
+
+.checkbox-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.checkbox-input:checked +.checkbox-icon{
+    opacity: 1;
+}
+
 
 .checkbox-text {
     font-style: 400px;
     font-size: 12px;
     line-height: calc(16 / 12);
+    letter-spacing: 0.04em;
+    user-select: none;
+
     color: rgba(117, 117, 117, 1);
+}
+.checkbox-link{
+    position: relative;
+    font-style: 400px;
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    text-decoration: none;
+
+    color: var(--accent-color);
+}
+.checkbox-link::before{
+    position: absolute;
+    bottom: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--accent-color);
 }
 
 .form-send-button {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 169px;
+    min-height: 56px;
     margin-top: 24px;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 32px;
     padding-right: 32px;
+    cursor: pointer;
     border: none;
     border-radius: 4px;
+
+    font-family: var(--primery-font);
+    font-weight: 500px;
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.04em;
     background-color: var(--accent-color);
     color: var(--white-text-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    transition: background-color var(--transition);
+}
+.form-send-button:hover,
+.form-send-button:focus{
+    background-color: var(--button-click-color);
 }
